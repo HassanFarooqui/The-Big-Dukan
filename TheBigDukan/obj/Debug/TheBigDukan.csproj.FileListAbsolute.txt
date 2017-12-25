@@ -45,6 +45,6 @@ c:\users\hassan farooqui\documents\visual studio 2015\Projects\TheBigDukan\TheBi
 c:\users\hassan farooqui\documents\visual studio 2015\Projects\TheBigDukan\TheBigDukan\bin\System.Web.Webpages.Razor.xml
 c:\users\hassan farooqui\documents\visual studio 2015\Projects\TheBigDukan\TheBigDukan\bin\System.Web.Helpers.xml
 c:\users\hassan farooqui\documents\visual studio 2015\Projects\TheBigDukan\TheBigDukan\bin\System.Web.Mvc.xml
-c:\users\hassan farooqui\documents\visual studio 2015\Projects\TheBigDukan\TheBigDukan\obj\Debug\TheBigDukan.csprojResolveAssemblyReference.cache
 c:\users\hassan farooqui\documents\visual studio 2015\Projects\TheBigDukan\TheBigDukan\obj\Debug\TheBigDukan.dll
 c:\users\hassan farooqui\documents\visual studio 2015\Projects\TheBigDukan\TheBigDukan\obj\Debug\TheBigDukan.pdb
+c:\users\hassan farooqui\documents\visual studio 2015\Projects\TheBigDukan\TheBigDukan\obj\Debug\TheBigDukan.csprojResolveAssemblyReference.cache

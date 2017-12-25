@@ -13,5 +13,10 @@ namespace TheBigDukan.Controllers
         {
             return View();
         }
+       
+      public ActionResult SignUpView()
+        {
+            return View();
+        }
     }
 }

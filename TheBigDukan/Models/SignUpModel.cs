@@ -21,5 +21,14 @@ namespace TheBigDukan.Models
 
         public string UserType { get; set; }
 
-        }
+
+        public List<string> userList = new List<string>
+        {
+            "Vendor",
+            "Customer"
+        };
+
+
+
+    }
 }

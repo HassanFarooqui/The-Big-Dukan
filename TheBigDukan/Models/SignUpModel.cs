@@ -15,20 +15,11 @@ namespace TheBigDukan.Models
 
         public string Address { get; set; }
 
-        public int CellNo { get; set; }
+        public string CellNo { get; set; }
 
         public string Password { get; set; }
 
         public string UserType { get; set; }
-
-
-        public List<string> userList = new List<string>
-        {
-            "Vendor",
-            "Customer"
-        };
-
-
 
     }
 }

@@ -9,13 +9,44 @@ namespace TheBigDukan.Controllers
 {
     public class LogInController : Controller
     {
-        Entities db = new Entities();
+        Entities1 db = new Entities1();
         // GET: LogIn
+        [HttpGet]
         public ActionResult LogInAction()
         {
             return View();
         }
-       [HttpGet]
+
+        [HttpPost]
+        public ActionResult LogInAction(LogInModel myLoginModel)
+        {
+            string id = myLoginModel.Email;
+            string pass = myLoginModel.Password;
+            try
+            {
+                Registration regform = db.Registrations.Single(w => w.email == id && w.password == pass);
+                if (ModelState.IsValid)
+                {
+                    if (regform == null)
+                    {
+
+                        Response.Write("No Record Found");
+                    }
+                    else { Response.Write("Record Found"); }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+                
+            }
+            
+          
+            return View();
+        }
+
+        [HttpGet]
       public ActionResult SignUpView()
         {
             return View();
@@ -24,16 +55,37 @@ namespace TheBigDukan.Controllers
         public ActionResult SignUpView(SignUpModel mymodelSignUp)
 
         {
-            Reg_Table regform = new Reg_Table();
-            regform.name = mymodelSignUp.Name;
-            regform.email = mymodelSignUp.Email;
-            regform.address = mymodelSignUp.Address;
-            regform.cellNo = Convert.ToString(mymodelSignUp.CellNo);
-            
+            Registration regform = new Registration();
+            try
+            {
+                Byte[] imagedata = { 234 };
+                regform.name = mymodelSignUp.Name;
+                regform.email = mymodelSignUp.Email;
+                regform.address = mymodelSignUp.Address;
+                regform.cellNo = mymodelSignUp.CellNo;
+                regform.password = mymodelSignUp.Password;
+                regform.userType = mymodelSignUp.UserType;
+                regform.time = Convert.ToString(DateTime.Now.Date);
+                //regform.date = Convert.ToString(DateTime.Now.Date);
+                //regform.photo = imagedata;
+                if (mymodelSignUp.UserType == "Vendor")
+                {
+                    regform.isActive = false;
+                }
+                else
+                {
+                    regform.isActive = true;
+                }
+                db.Registrations.Add(regform);
+                db.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+                throw;
+            }
+          
 
-
-
-           
             return View();
         }
     }

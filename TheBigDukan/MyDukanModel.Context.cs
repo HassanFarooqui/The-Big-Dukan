@@ -13,10 +13,10 @@ namespace TheBigDukan
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities : DbContext
+    public partial class Entities1 : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public Entities1()
+            : base("name=Entities1")
         {
         }
     
@@ -25,6 +25,7 @@ namespace TheBigDukan
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Reg_Table> Reg_Table { get; set; }
+        public virtual DbSet<Registration> Registrations { get; set; }
+        public virtual DbSet<TestingTable> TestingTables { get; set; }
     }
 }

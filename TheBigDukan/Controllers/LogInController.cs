@@ -19,7 +19,9 @@ namespace TheBigDukan.Controllers
 
         [HttpPost]
         public ActionResult LogInAction(LogInModel myLoginModel)
+
         {
+            ActionResult myaction = RedirectToAction("VenderActionIndex", "Vendor");
             string id = myLoginModel.Email;
             string pass = myLoginModel.Password;
             try
@@ -31,6 +33,7 @@ namespace TheBigDukan.Controllers
                     {
 
                         Response.Write("No Record Found");
+                        myaction = View();
                     }
                     else { Response.Write("Record Found"); }
 
@@ -38,12 +41,13 @@ namespace TheBigDukan.Controllers
             }
             catch (Exception ex)
             {
+                myaction = View();
                 Response.Write(ex.Message);
                 
             }
             
           
-            return View();
+            return myaction;
         }
 
         [HttpGet]

@@ -24,25 +24,32 @@ namespace TheBigDukan.Controllers
             ActionResult myaction = RedirectToAction("VenderActionIndex", "Vendor");
             string id = myLoginModel.Email;
             string pass = myLoginModel.Password;
-            try
+            if (id != null && pass != null)
             {
-                Registration regform = db.Registrations.Single(w => w.email == id && w.password == pass);
-                if (ModelState.IsValid)
+                try
                 {
-                    if (regform == null)
+                    Registration regform = db.Registrations.Single(w => w.email == id && w.password == pass);
+                    if (ModelState.IsValid)
                     {
-                       
-                        myLoginModel.ErrorMsg = "not found";
-                        myaction = View(myLoginModel);
+                        if (regform == null)
+                        {
+
+                            myLoginModel.ErrorMsg = "not found";
+                            myaction = View(myLoginModel);
+                        }
                     }
                 }
+                catch (Exception ex)
+                {
+                    myLoginModel.ErrorMsg = "not found";
+                    myaction = View(myLoginModel);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                myLoginModel.ErrorMsg = "not found";
-                myaction = View(myLoginModel);
+                myaction = View();
+
             }
-        
             return myaction;
         }
 

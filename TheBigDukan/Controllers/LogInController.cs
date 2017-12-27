@@ -31,22 +31,18 @@ namespace TheBigDukan.Controllers
                 {
                     if (regform == null)
                     {
-
-                        Response.Write("No Record Found");
-                        myaction = View();
+                       
+                        myLoginModel.ErrorMsg = "not found";
+                        myaction = View(myLoginModel);
                     }
-                    else { Response.Write("Record Found"); }
-
                 }
             }
             catch (Exception ex)
             {
-                myaction = View();
-                Response.Write(ex.Message);
-                
+                myLoginModel.ErrorMsg = "not found";
+                myaction = View(myLoginModel);
             }
-            
-          
+        
             return myaction;
         }
 

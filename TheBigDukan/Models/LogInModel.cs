@@ -10,5 +10,8 @@ namespace TheBigDukan.Models
         public string Email { get; set; }
 
         public string Password { get; set; }
+
+        public string ErrorMsg { get; set; }
+
     }
 }

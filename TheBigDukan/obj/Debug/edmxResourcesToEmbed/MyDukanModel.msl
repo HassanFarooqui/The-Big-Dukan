@@ -4,6 +4,7 @@
     <EntitySetMapping Name="Registrations">
       <EntityTypeMapping TypeName="Model.Registration">
         <MappingFragment StoreEntitySet="Registration">
+          <ScalarProperty Name="Image" ColumnName="Image" />
           <ScalarProperty Name="time" ColumnName="time" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="email" ColumnName="email" />

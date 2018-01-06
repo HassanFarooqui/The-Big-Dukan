@@ -132,6 +132,15 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\Butler Logo.png" />
+    <Content Include="Images\Electronic.jpg" />
+    <Content Include="Images\Fruits.jpg" />
+    <Content Include="Images\Gerocery.jpg" />
+    <Content Include="Images\HouseHold.jpg" />
+    <Content Include="Images\icons8-pill-50 %281%29.png" />
+    <Content Include="Images\MedicalS.jpg" />
+    <Content Include="Images\Telephone.png" />
+    <Content Include="Images\Vegetable.jpeg" />
     <Content Include="MyDukanModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MyDukanModel.edmx</DependentUpon>
@@ -215,6 +224,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Pictures\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

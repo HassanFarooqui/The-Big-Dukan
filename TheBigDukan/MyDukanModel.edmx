@@ -18,6 +18,7 @@
           <Property Name="isActive" Type="bit" Nullable="false" />
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="time" Type="text" />
+          <Property Name="Image" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TestingTable">
           <Key>
@@ -50,6 +51,7 @@
           <Property Name="isActive" Type="Boolean" Nullable="false" />
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="time" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="TestingTable">
           <Key>
@@ -74,6 +76,7 @@
           <EntitySetMapping Name="Registrations">
             <EntityTypeMapping TypeName="Model.Registration">
               <MappingFragment StoreEntitySet="Registration">
+                <ScalarProperty Name="Image" ColumnName="Image" />
                 <ScalarProperty Name="time" ColumnName="time" />
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="email" ColumnName="email" />

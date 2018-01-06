@@ -20,6 +20,7 @@ namespace TheBigDukan.Models
         public string Password { get; set; }
 
         public string UserType { get; set; }
+        public HttpPostedFileBase Image_new { get; set; }
 
     }
 }

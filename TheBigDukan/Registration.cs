@@ -11,7 +11,7 @@ namespace TheBigDukan
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Web;
     public partial class Registration
     {
         public string name { get; set; }
@@ -23,5 +23,7 @@ namespace TheBigDukan
         public bool isActive { get; set; }
         public int id { get; set; }
         public string time { get; set; }
+        public string Image { get; set; }
+       public HttpPostedFileBase Image_new { get; set; }
     }
 }

@@ -13,6 +13,7 @@
     <Property Name="isActive" Type="bit" Nullable="false" />
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="time" Type="text" />
+    <Property Name="Image" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="TestingTable">
     <Key>

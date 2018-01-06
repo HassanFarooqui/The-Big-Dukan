@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -19,8 +20,9 @@ namespace TheBigDukan.Controllers
 
         [HttpPost]
         public ActionResult LogInAction(LogInModel myLoginModel)
-
+            
         {
+            var mod = new SignUpModel();
             ActionResult myaction = RedirectToAction("VenderActionIndex", "Vendor");
             string id = myLoginModel.Email;
             string pass = myLoginModel.Password;
@@ -29,13 +31,21 @@ namespace TheBigDukan.Controllers
                 try
                 {
                     Registration regform = db.Registrations.Single(w => w.email == id && w.password == pass);
+                  //  Response.Write(regform.name);
                     if (ModelState.IsValid)
                     {
                         if (regform == null)
                         {
-
+                            
                             myLoginModel.ErrorMsg = "not found";
                             myaction = View(myLoginModel);
+                        }
+                        else
+                        {
+                            mod.Name = regform.name;
+                           myaction = RedirectToAction("VenderActionIndex", "Vendor",mod);
+                         
+
                         }
                     }
                 }
@@ -52,7 +62,7 @@ namespace TheBigDukan.Controllers
             }
             return myaction;
         }
-
+       
         [HttpGet]
       public ActionResult SignUpView()
         {
@@ -64,8 +74,8 @@ namespace TheBigDukan.Controllers
         {
             Registration regform = new Registration();
             try
-            {
-                Byte[] imagedata = { 234 };
+            {  
+
                 regform.name = mymodelSignUp.Name;
                 regform.email = mymodelSignUp.Email;
                 regform.address = mymodelSignUp.Address;
@@ -73,8 +83,6 @@ namespace TheBigDukan.Controllers
                 regform.password = mymodelSignUp.Password;
                 regform.userType = mymodelSignUp.UserType;
                 regform.time = Convert.ToString(DateTime.Now.Date);
-                //regform.date = Convert.ToString(DateTime.Now.Date);
-                //regform.photo = imagedata;
                 if (mymodelSignUp.UserType == "Vendor")
                 {
                     regform.isActive = false;
@@ -83,13 +91,23 @@ namespace TheBigDukan.Controllers
                 {
                     regform.isActive = true;
                 }
+
+                string FileName = Path.GetFileNameWithoutExtension(mymodelSignUp.Image_new.FileName);
+                string Extension = Path.GetExtension(mymodelSignUp.Image_new.FileName);
+                FileName = FileName + DateTime.Now.ToString("yymmssff") + Extension;
+                regform.Image = "~/Pictures/" + FileName;
+
+                FileName = Path.Combine(Server.MapPath("~/Pictures/"), FileName);
+                mymodelSignUp.Image_new.SaveAs(FileName);
+
+
                 db.Registrations.Add(regform);
                 db.SaveChanges();
             }
             catch (Exception ex)
             {
                 Response.Write(ex.Message);
-                throw;
+               
             }
           
 

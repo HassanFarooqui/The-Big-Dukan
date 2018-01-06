@@ -9,9 +9,9 @@ namespace TheBigDukan.Controllers
     public class VendorController : Controller
     {
         // GET: Vendor
-        public ActionResult VenderActionIndex()
+        public ActionResult VenderActionIndex(Models.SignUpModel model)
         {
-            return View();
+            return View(model);
         }
     }
 }

@@ -133,14 +133,15 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\Butler Logo.png" />
-    <Content Include="Images\Electronic.jpg" />
-    <Content Include="Images\Fruits.jpg" />
-    <Content Include="Images\Gerocery.jpg" />
-    <Content Include="Images\HouseHold.jpg" />
-    <Content Include="Images\icons8-pill-50 %281%29.png" />
-    <Content Include="Images\MedicalS.jpg" />
-    <Content Include="Images\Telephone.png" />
-    <Content Include="Images\Vegetable.jpeg" />
+    <Content Include="Images\ElectronicItems %281%29.png" />
+    <Content Include="Images\Food.png" />
+    <Content Include="Images\Fruits.png" />
+    <Content Include="Images\Medicines.png" />
+    <Content Include="Images\Password.png" />
+    <Content Include="Images\ShoppingCart-50.png" />
+    <Content Include="Images\Toys.png" />
+    <Content Include="Images\UserName.png" />
+    <Content Include="Images\Vegetables.png" />
     <Content Include="MyDukanModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>MyDukanModel.edmx</DependentUpon>
@@ -173,11 +174,13 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\LogInController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\VendorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\LogInModel.cs" />
+    <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\SignUpModel.cs" />
     <Compile Include="MyDukanModel.Context.cs">
       <AutoGen>True</AutoGen>
@@ -215,6 +218,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Vendor\VenderActionIndex.cshtml" />
+    <Content Include="Views\Product\ProductAction.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

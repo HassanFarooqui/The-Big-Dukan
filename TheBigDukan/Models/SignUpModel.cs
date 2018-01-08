@@ -7,6 +7,21 @@ namespace TheBigDukan.Models
 {
     public class SignUpModel
     {
+       public static SignUpModel sharedInstance = new SignUpModel();
+
+        public SignUpModel() { }
+        public SignUpModel(Registration regestration) {
+
+            this.Id = regestration.id;
+            Name = regestration.name;
+            Email = regestration.email;
+            Address = regestration.address;
+            CellNo = regestration.cellNo;
+            Password = regestration.password;
+            UserType = regestration.userType;
+            Image_new = regestration.Image_new;
+        }
+
         public int Id { get; set; }
 
         public string Name { get; set; }

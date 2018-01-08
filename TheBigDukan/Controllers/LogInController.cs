@@ -22,7 +22,7 @@ namespace TheBigDukan.Controllers
         public ActionResult LogInAction(LogInModel myLoginModel)
             
         {
-            var mod = new SignUpModel();
+            
             ActionResult myaction = RedirectToAction("VenderActionIndex", "Vendor");
             string id = myLoginModel.Email;
             string pass = myLoginModel.Password;
@@ -42,8 +42,10 @@ namespace TheBigDukan.Controllers
                         }
                         else
                         {
-                            mod.Name = regform.name;
-                           myaction = RedirectToAction("VenderActionIndex", "Vendor",mod);
+                            SignUpModel mod = new SignUpModel(regform);
+
+
+                             myaction = RedirectToAction("VenderActionIndex", "Vendor",mod);
                          
 
                         }

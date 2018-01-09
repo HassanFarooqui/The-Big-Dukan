@@ -179,6 +179,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Main_Category.cs">
+      <DependentUpon>MyDukanModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\LogInModel.cs" />
     <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\SignUpModel.cs" />
@@ -196,6 +199,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>MyDukanModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>MyDukanModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Registration.cs">

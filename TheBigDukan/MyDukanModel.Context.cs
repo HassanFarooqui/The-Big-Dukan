@@ -27,5 +27,7 @@ namespace TheBigDukan
     
         public virtual DbSet<Registration> Registrations { get; set; }
         public virtual DbSet<TestingTable> TestingTables { get; set; }
+        public virtual DbSet<Main_Category> Main_Category { get; set; }
+        public virtual DbSet<Product> Products { get; set; }
     }
 }

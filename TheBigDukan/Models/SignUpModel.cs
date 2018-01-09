@@ -9,8 +9,9 @@ namespace TheBigDukan.Models
     {
        public static SignUpModel sharedInstance = new SignUpModel();
 
-        public SignUpModel() { }
-        public SignUpModel(Registration regestration) {
+        public SignUpModel() { }  // empty Constructor
+        public SignUpModel(Registration regestration)   //  constructor with parameters
+        {
 
             this.Id = regestration.id;
             Name = regestration.name;

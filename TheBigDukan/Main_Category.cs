@@ -12,13 +12,9 @@ namespace TheBigDukan
     using System;
     using System.Collections.Generic;
     
-    public partial class TestingTable
+    public partial class Main_Category
     {
-        public string name { get; set; }
-        public int ager { get; set; }
-        public string last_name { get; set; }
-        public int F_name { get; set; }
-        public int id { get; set; }
-        public string image { get; set; }
+        public int category_ID { get; set; }
+        public string Cat_Name { get; set; }
     }
 }

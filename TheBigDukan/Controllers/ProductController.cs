@@ -13,7 +13,7 @@ namespace TheBigDukan.Controllers
         // GET: Product
         public ActionResult ProductAction()
         {
-           int abc =  SignUpModel.sharedInstance.Id;
+            int abc =  SignUpModel.sharedInstance.Id;
             string name = SignUpModel.sharedInstance.Name;
             string a = SignUpModel.sharedInstance.Password;
 

@@ -21,12 +21,12 @@ namespace TheBigDukan.Controllers
         public ActionResult Electronic()
         {
             ActionResult myaction = RedirectToAction("ProductAction", "Product");
-            string Elect = "Electronics";
+            int Elect = 1;
 
             //   Registration regform = db.Registrations.Single(w => w.email == id && w.password == pass);
             try
             {
-                Main_Category maincat = db.Main_Category.Single(w => w.Cat_Name == Elect);
+                Main_Category maincat = db.Main_Category.Single(w => w.category_ID == Elect);
                 if (maincat != null)
                 {
 

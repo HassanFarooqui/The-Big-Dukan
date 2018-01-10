@@ -16,5 +16,6 @@ namespace TheBigDukan
     {
         public int category_ID { get; set; }
         public string Cat_Name { get; set; }
+        public string cat_Data { get; set; }
     }
 }

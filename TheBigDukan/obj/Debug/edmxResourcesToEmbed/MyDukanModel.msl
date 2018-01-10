@@ -32,6 +32,7 @@
     <EntitySetMapping Name="Main_Category">
       <EntityTypeMapping TypeName="Model.Main_Category">
         <MappingFragment StoreEntitySet="Main_Category">
+          <ScalarProperty Name="cat_Data" ColumnName="cat_Data" />
           <ScalarProperty Name="Cat_Name" ColumnName="Cat_Name" />
           <ScalarProperty Name="category_ID" ColumnName="category_ID" />
         </MappingFragment>

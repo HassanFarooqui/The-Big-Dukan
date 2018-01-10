@@ -11,6 +11,7 @@
           </Key>
           <Property Name="category_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Cat_Name" Type="text" Nullable="false" />
+          <Property Name="cat_Data" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Products">
           <Key>
@@ -107,6 +108,7 @@
           </Key>
           <Property Name="category_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Cat_Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="cat_Data" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -166,6 +168,7 @@
           <EntitySetMapping Name="Main_Category">
             <EntityTypeMapping TypeName="Model.Main_Category">
               <MappingFragment StoreEntitySet="Main_Category">
+                <ScalarProperty Name="cat_Data" ColumnName="cat_Data" />
                 <ScalarProperty Name="Cat_Name" ColumnName="Cat_Name" />
                 <ScalarProperty Name="category_ID" ColumnName="category_ID" />
               </MappingFragment>

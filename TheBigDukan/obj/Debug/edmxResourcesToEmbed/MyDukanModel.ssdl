@@ -6,6 +6,7 @@
     </Key>
     <Property Name="category_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Cat_Name" Type="text" Nullable="false" />
+    <Property Name="cat_Data" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Products">
     <Key>

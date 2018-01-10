@@ -51,7 +51,7 @@ namespace TheBigDukan.Controllers
                         }
                     }
                 }
-                catch (Exception ex)
+                catch (Exception )
                 {
                     myLoginModel.ErrorMsg = "not found";
                     myaction = View(myLoginModel);

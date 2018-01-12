@@ -1,4 +1,3 @@
-C:\Users\Hassan Farooqui\Documents\Visual Studio 2015\Projects\TheBigDukan\TheBigDukan\obj\Debug\TheBigDukan.csprojResolveAssemblyReference.cache
 C:\Users\Hassan Farooqui\Documents\Visual Studio 2015\Projects\TheBigDukan\TheBigDukan\bin\ApplicationInsights.config
 C:\Users\Hassan Farooqui\Documents\Visual Studio 2015\Projects\TheBigDukan\TheBigDukan\bin\roslyn\csc.exe
 C:\Users\Hassan Farooqui\Documents\Visual Studio 2015\Projects\TheBigDukan\TheBigDukan\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll

@@ -23,17 +23,15 @@ namespace TheBigDukan.Controllers
         {
             ActionResult myaction = RedirectToAction("ProductAction", "Product");
             string Elect = "Electronics";
-            int id = 1;
-            String name = "";
+           
             try
             {
-              //  Main_Category maincat = db.Main_Category.Single(w => w.cat_Data == Elect );
-                var a = db.Main_Category.Where(w => w.Cat_Name.StartsWith(Elect)).ToList();
+               Main_Category maincat = db.Main_Category.Single(w => w.cat_Data == Elect );
+               // var a = db.Main_Category.Where(w => w.Cat_Name.StartsWith(Elect)).ToList();
                
                 if (maincat != null)
                 {
-                    category_id = maincat.category_ID;
-                    name = maincat.Cat_Name;
+                    CategorySampleClass category = new CategorySampleClass(maincat);
                }
             }
             catch (Exception ex)

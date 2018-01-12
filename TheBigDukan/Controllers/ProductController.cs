@@ -18,6 +18,8 @@ namespace TheBigDukan.Controllers
             int abc =  SignUpModel.sharedInstance.Id;
             string name = SignUpModel.sharedInstance.Name;
             string a = SignUpModel.sharedInstance.Password;
+            int cat_id = CategorySampleClass.sharedVar.Id;
+            string Cat_Name = CategorySampleClass.sharedVar.Name;
 
             return View();
         }

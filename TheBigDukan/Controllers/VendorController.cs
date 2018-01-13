@@ -31,7 +31,8 @@ namespace TheBigDukan.Controllers
                
                 if (maincat != null)
                 {
-                    CategorySampleClass category = new CategorySampleClass(maincat);
+                    
+                    Session["CategoryOBj"] = maincat;
                }
             }
             catch (Exception ex)

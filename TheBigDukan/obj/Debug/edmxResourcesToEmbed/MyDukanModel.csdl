@@ -25,11 +25,18 @@
     <Property Name="F_name" Type="Int32" Nullable="false" />
     <Property Name="id" Type="Int32" Nullable="false" />
     <Property Name="image" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="testC" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TestingTable1" Relationship="Model.FK_TestingTable_TestingTable" FromRole="TestingTable" ToRole="TestingTable1" />
+    <NavigationProperty Name="TestingTable2" Relationship="Model.FK_TestingTable_TestingTable" FromRole="TestingTable1" ToRole="TestingTable" />
   </EntityType>
   <EntityContainer Name="Entities1" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Registrations" EntityType="Self.Registration" />
     <EntitySet Name="TestingTables" EntityType="Self.TestingTable" />
     <EntitySet Name="Main_Category" EntityType="Model.Main_Category" />
+    <AssociationSet Name="FK_TestingTable_TestingTable" Association="Model.FK_TestingTable_TestingTable">
+      <End Role="TestingTable" EntitySet="TestingTables" />
+      <End Role="TestingTable1" EntitySet="TestingTables" />
+    </AssociationSet>
     <EntitySet Name="Products" EntityType="Model.Product" />
   </EntityContainer>
   <EntityType Name="Main_Category">
@@ -37,9 +44,20 @@
       <PropertyRef Name="category_ID" />
     </Key>
     <Property Name="category_ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Cat_Name" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="cat_Data" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
+  <Association Name="FK_TestingTable_TestingTable">
+    <End Type="Model.TestingTable" Role="TestingTable" Multiplicity="1" />
+    <End Type="Model.TestingTable" Role="TestingTable1" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TestingTable">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TestingTable1">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityType Name="Product">
     <Key>
       <PropertyRef Name="product_ID" />
@@ -59,6 +77,5 @@
     <Property Name="created_By" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="UpDate_By" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
     <Property Name="Discounted_Prize" Type="Int32" />
-    <Property Name="timStamp" Type="Binary" MaxLength="8" FixedLength="true" annotation:StoreGeneratedPattern="Computed" />
   </EntityType>
 </Schema>

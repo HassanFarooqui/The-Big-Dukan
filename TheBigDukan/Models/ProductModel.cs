@@ -12,7 +12,7 @@ namespace TheBigDukan.Models
 
         public string Product_Name { get; set; }
 
-        public int Product_Maker { get; set; }
+        public string Product_Maker { get; set; }
 
         public int Cat_ID { get; set; }
 
@@ -22,8 +22,8 @@ namespace TheBigDukan.Models
 
         public int Product_Prize { get; set; }
 
-        public int Product_Type { get; set; }
+        public string Product_Type { get; set; }
 
-        public int Product_Details { get; set; }
+        public string Product_Details { get; set; }
     }
 }

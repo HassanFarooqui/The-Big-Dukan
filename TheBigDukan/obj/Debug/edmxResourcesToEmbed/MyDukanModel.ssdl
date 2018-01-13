@@ -5,7 +5,6 @@
       <PropertyRef Name="category_ID" />
     </Key>
     <Property Name="category_ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Cat_Name" Type="text" Nullable="false" />
     <Property Name="cat_Data" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Products">
@@ -27,7 +26,6 @@
     <Property Name="created_By" Type="text" />
     <Property Name="UpDate_By" Type="text" />
     <Property Name="Discounted_Prize" Type="int" />
-    <Property Name="timStamp" Type="timestamp" StoreGeneratedPattern="Computed" />
   </EntityType>
   <EntityType Name="Registration">
     <Key>
@@ -54,11 +52,28 @@
     <Property Name="F_name" Type="int" Nullable="false" />
     <Property Name="id" Type="int" Nullable="false" />
     <Property Name="image" Type="nchar" MaxLength="10" />
+    <Property Name="testC" Type="varchar" MaxLength="50" />
   </EntityType>
+  <Association Name="FK_TestingTable_TestingTable">
+    <End Role="TestingTable" Type="Self.TestingTable" Multiplicity="1" />
+    <End Role="TestingTable1" Type="Self.TestingTable" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="TestingTable">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TestingTable1">
+        <PropertyRef Name="id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="ModelStoreContainer">
     <EntitySet Name="Main_Category" EntityType="Self.Main_Category" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TestingTable" EntityType="Self.TestingTable" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_TestingTable_TestingTable" Association="Self.FK_TestingTable_TestingTable">
+      <End Role="TestingTable" EntitySet="TestingTable" />
+      <End Role="TestingTable1" EntitySet="TestingTable" />
+    </AssociationSet>
   </EntityContainer>
 </Schema>

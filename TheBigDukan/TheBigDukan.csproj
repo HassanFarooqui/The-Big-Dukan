@@ -173,7 +173,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
-    <Compile Include="CategorySampleClass.cs" />
     <Compile Include="Controllers\LogInController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\VendorController.cs" />

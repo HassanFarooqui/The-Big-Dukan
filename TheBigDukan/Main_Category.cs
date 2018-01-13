@@ -15,7 +15,6 @@ namespace TheBigDukan
     public partial class Main_Category
     {
         public int category_ID { get; set; }
-       
         public string cat_Data { get; set; }
     }
 }

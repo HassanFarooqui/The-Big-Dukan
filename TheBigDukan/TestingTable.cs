@@ -20,5 +20,9 @@ namespace TheBigDukan
         public int F_name { get; set; }
         public int id { get; set; }
         public string image { get; set; }
+        public string testC { get; set; }
+    
+        public virtual TestingTable TestingTable1 { get; set; }
+        public virtual TestingTable TestingTable2 { get; set; }
     }
 }

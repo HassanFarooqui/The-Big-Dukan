@@ -20,6 +20,7 @@
     <EntitySetMapping Name="TestingTables">
       <EntityTypeMapping TypeName="Model.TestingTable">
         <MappingFragment StoreEntitySet="TestingTable">
+          <ScalarProperty Name="testC" ColumnName="testC" />
           <ScalarProperty Name="image" ColumnName="image" />
           <ScalarProperty Name="name" ColumnName="name" />
           <ScalarProperty Name="ager" ColumnName="ager" />
@@ -33,7 +34,6 @@
       <EntityTypeMapping TypeName="Model.Main_Category">
         <MappingFragment StoreEntitySet="Main_Category">
           <ScalarProperty Name="cat_Data" ColumnName="cat_Data" />
-          <ScalarProperty Name="Cat_Name" ColumnName="Cat_Name" />
           <ScalarProperty Name="category_ID" ColumnName="category_ID" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -41,7 +41,6 @@
     <EntitySetMapping Name="Products">
       <EntityTypeMapping TypeName="Model.Product">
         <MappingFragment StoreEntitySet="Products">
-          <ScalarProperty Name="timStamp" ColumnName="timStamp" />
           <ScalarProperty Name="Discounted_Prize" ColumnName="Discounted_Prize" />
           <ScalarProperty Name="UpDate_By" ColumnName="UpDate_By" />
           <ScalarProperty Name="created_By" ColumnName="created_By" />

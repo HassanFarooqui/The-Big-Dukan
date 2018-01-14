@@ -47,3 +47,4 @@ C:\Users\Hassan Farooqui\Documents\Visual Studio 2015\Projects\TheBigDukan\TheBi
 C:\Users\Hassan Farooqui\Documents\Visual Studio 2015\Projects\TheBigDukan\TheBigDukan\bin\System.Web.Mvc.xml
 C:\Users\Hassan Farooqui\Documents\Visual Studio 2015\Projects\TheBigDukan\TheBigDukan\obj\Debug\TheBigDukan.dll
 C:\Users\Hassan Farooqui\Documents\Visual Studio 2015\Projects\TheBigDukan\TheBigDukan\obj\Debug\TheBigDukan.pdb
+C:\Users\Hassan Farooqui\Documents\Visual Studio 2015\Projects\TheBigDukan\TheBigDukan\obj\Debug\TheBigDukan.csprojResolveAssemblyReference.cache

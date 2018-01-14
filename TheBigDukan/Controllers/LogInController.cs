@@ -94,6 +94,9 @@ namespace TheBigDukan.Controllers
                     regform.isActive = true;
                 }
 
+                #region Save Image on Server
+
+             
                 string FileName = Path.GetFileNameWithoutExtension(mymodelSignUp.Image_new.FileName);
                 string Extension = Path.GetExtension(mymodelSignUp.Image_new.FileName);
                 FileName = FileName + DateTime.Now.ToString("yymmssff") + Extension;
@@ -101,7 +104,7 @@ namespace TheBigDukan.Controllers
 
                 FileName = Path.Combine(Server.MapPath("~/Pictures/"), FileName);
                 mymodelSignUp.Image_new.SaveAs(FileName);
-
+                #endregion  
 
                 db.Registrations.Add(regform);
                 db.SaveChanges();

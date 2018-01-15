@@ -58,6 +58,9 @@ namespace TheBigDukan.Controllers
                 DB.Products.Add(ProdData);
                 DB.SaveChanges();
 
+
+
+
             }
             catch (Exception ex )
             {

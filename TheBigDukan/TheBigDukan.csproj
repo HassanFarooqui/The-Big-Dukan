@@ -139,6 +139,8 @@
     <Content Include="Images\Medicines.png" />
     <Content Include="Images\Password.png" />
     <Content Include="Images\ShoppingCart-50.png" />
+    <Content Include="Images\slider1.jpg" />
+    <Content Include="Images\slider2.jpg" />
     <Content Include="Images\Toys.png" />
     <Content Include="Images\UserName.png" />
     <Content Include="Images\Vegetables.png" />
@@ -167,6 +169,7 @@
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="Styles\vendor-action.css" />
     <Content Include="Web.config" />
     <Content Include="Views\LogIn\LogInAction.cshtml" />
     <Content Include="Views\LogIn\SignUpView.cshtml" />

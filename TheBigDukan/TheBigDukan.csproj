@@ -138,6 +138,8 @@
     <Content Include="Images\Fruits.png" />
     <Content Include="Images\Medicines.png" />
     <Content Include="Images\Password.png" />
+    <Content Include="Images\products\1.jpg" />
+    <Content Include="Images\products\2.jpg" />
     <Content Include="Images\ShoppingCart-50.png" />
     <Content Include="Images\slider1.jpg" />
     <Content Include="Images\slider2.jpg" />

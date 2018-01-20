@@ -13,12 +13,16 @@ namespace TheBigDukan.Controllers
     {
 
         Entities1 db = new Entities1();
-        // GET: ProductDetail
+
+        #region Show Product Page       
         public ActionResult ProductDetailActionIndex()
         {
             return View(db.Products.ToList());
         }
+        #endregion
 
+
+        #region Edit Action    
         [HttpGet]
         public ActionResult EditProduct(int id)
         {
@@ -46,16 +50,50 @@ namespace TheBigDukan.Controllers
             return myAction;
         }
 
+        #endregion
 
-     
+
+        #region Detail Action
         public ActionResult DetailProduct(int id)
         {
             Product p = db.Products.SingleOrDefault(g => g.product_ID == id);
             return View(p);
         }
-      
+        #endregion
+
+        [HttpGet]
+        public ActionResult DeleteProduct(int id)
+        {
+            Product std = db.Products.SingleOrDefault(w => w.product_ID == id);
+            return View(std);
+        }
+
+        [HttpPost]
+        public ActionResult DeleteProduct(Product model, int id)
+        {
+            ActionResult myAction = RedirectToAction("ProductDetailActionIndex", "ProductDetail");
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    // lb.Entry(model).State = EntityState.Deleted;
+                    //  lb.Students.Remove(model);
+
+                    Product employer = db.Products.FirstOrDefault(x => x.product_ID == id);
+
+                    db.Products.Remove(employer);
 
 
+
+                    db.SaveChanges();
+                }
+
+            }
+            catch (Exception f)
+            {
+            }
+            return myAction;
+        }
 
     }
 }

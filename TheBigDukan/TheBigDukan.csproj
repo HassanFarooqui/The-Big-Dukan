@@ -235,6 +235,7 @@
     <Content Include="Views\ProductDetail\ProductDetailActionIndex.cshtml" />
     <Content Include="Views\ProductDetail\EditProduct.cshtml" />
     <Content Include="Views\ProductDetail\DetailProduct.cshtml" />
+    <Content Include="Views\ProductDetail\DeleteProduct.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

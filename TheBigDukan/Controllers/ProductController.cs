@@ -31,7 +31,7 @@ namespace TheBigDukan.Controllers
         [HttpPost]
         public ActionResult ProductAction(ProductModel myProductModel)
         {
-            ActionResult myAction = RedirectToAction("LogInAction", "LogIn");
+            ActionResult myAction = RedirectToAction("ProductDetailActionIndex", "ProductDetail");
             Product ProdData = new Product();
             try
             {

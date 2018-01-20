@@ -31,6 +31,7 @@
           <Property Name="created_By" Type="text" />
           <Property Name="UpDate_By" Type="text" />
           <Property Name="Discounted_Prize" Type="int" />
+          <Property Name="image" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="Registration">
           <Key>
@@ -162,6 +163,7 @@
           <Property Name="created_By" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="UpDate_By" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="Discounted_Prize" Type="Int32" />
+          <Property Name="image" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -209,6 +211,7 @@
           <EntitySetMapping Name="Products">
             <EntityTypeMapping TypeName="Model.Product">
               <MappingFragment StoreEntitySet="Products">
+                <ScalarProperty Name="image" ColumnName="image" />
                 <ScalarProperty Name="Discounted_Prize" ColumnName="Discounted_Prize" />
                 <ScalarProperty Name="UpDate_By" ColumnName="UpDate_By" />
                 <ScalarProperty Name="created_By" ColumnName="created_By" />

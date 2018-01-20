@@ -26,6 +26,7 @@
     <Property Name="created_By" Type="text" />
     <Property Name="UpDate_By" Type="text" />
     <Property Name="Discounted_Prize" Type="int" />
+    <Property Name="image" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="Registration">
     <Key>

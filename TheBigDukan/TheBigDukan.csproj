@@ -181,6 +181,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\LogInController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ProductDetailController.cs" />
     <Compile Include="Controllers\VendorController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -231,6 +232,8 @@
     <Content Include="scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Vendor\VenderActionIndex.cshtml" />
     <Content Include="Views\Product\ProductAction.cshtml" />
+    <Content Include="Views\ProductDetail\ProductDetailActionIndex.cshtml" />
+    <Content Include="Views\ProductDetail\EditProduct.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

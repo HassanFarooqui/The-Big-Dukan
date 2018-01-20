@@ -29,5 +29,6 @@ namespace TheBigDukan
         public string created_By { get; set; }
         public string UpDate_By { get; set; }
         public Nullable<int> Discounted_Prize { get; set; }
+        public string image { get; set; }
     }
 }

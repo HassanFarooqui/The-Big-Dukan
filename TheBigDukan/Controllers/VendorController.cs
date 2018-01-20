@@ -21,7 +21,7 @@ namespace TheBigDukan.Controllers
         }
         public ActionResult Electronic()
         {
-            ActionResult myaction = RedirectToAction("ProductAction", "Product");
+            ActionResult myaction = RedirectToAction("ProductDetailActionIndex", "ProductDetail");
             string Elect = "Electronics";
            
             try

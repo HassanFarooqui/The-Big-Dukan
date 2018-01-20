@@ -50,8 +50,8 @@
             @Html.DisplayFor(modelItem => item.Discounted_Prize)
         </td>
         <td>
-            @Html.ActionLink( "ProductDetail" , "EditProduct", new { id = item.product_ID }) |
-            @Html.ActionLink("Details", "Details", new {  id=item.product_ID  }) |
+            @Html.ActionLink( "Edit" , "EditProduct", new { id = item.product_ID }) |
+            @Html.ActionLink("Details", "DetailProduct", new {  id=item.product_ID  }) |
             @Html.ActionLink("Delete", "Delete", new {  id=item.product_ID })
         </td>
     </tr>

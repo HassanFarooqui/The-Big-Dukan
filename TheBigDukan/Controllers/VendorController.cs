@@ -35,12 +35,8 @@ namespace TheBigDukan.Controllers
             }
             catch (Exception ex)
             {
-
                 Response.Write(ex.Message);
             }
-            
-
-
             return myaction;
         }
     }

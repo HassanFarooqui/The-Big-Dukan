@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -55,11 +56,21 @@ namespace TheBigDukan.Controllers
                 ProdData.Discounted_Prize = myProductModel.Product_Prize;
                 ProdData.created_By = Vendor_Data.Email;
                 ProdData.Update_Date = null;
+
+
+                #region Save Image on Server
+
+
+                string FileName = Path.GetFileNameWithoutExtension(myProductModel.Image_new2.FileName);
+                string Extension = Path.GetExtension(myProductModel.Image_new2.FileName);
+                FileName = FileName + DateTime.Now.ToString("yymmssff") + Extension;
+                ProdData.image = "~/Pictures/" + FileName;
+
+                FileName = Path.Combine(Server.MapPath("~/Pictures/"), FileName);
+                myProductModel.Image_new2.SaveAs(FileName);
+                #endregion  
                 DB.Products.Add(ProdData);
                 DB.SaveChanges();
-
-
-
 
             }
             catch (Exception ex )
@@ -68,7 +79,7 @@ namespace TheBigDukan.Controllers
                
             }
            
-            return View();
+            return myAction;
         }
     }
 }

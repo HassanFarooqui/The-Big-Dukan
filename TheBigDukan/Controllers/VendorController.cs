@@ -10,8 +10,6 @@ namespace TheBigDukan.Controllers
     public class VendorController : Controller
     {
         Entities1 db = new Entities1();
-        int category_id;
-
 
         // GET: Vendor
         public ActionResult VenderActionIndex(SignUpModel model)

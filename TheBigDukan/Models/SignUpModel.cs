@@ -21,6 +21,7 @@ namespace TheBigDukan.Models
             Password = regestration.password;
             UserType = regestration.userType;
             Image_new = regestration.Image_new;
+            this.Image = regestration.Image;
         }
 
         public int Id { get; set; }
@@ -36,6 +37,8 @@ namespace TheBigDukan.Models
         public string Password { get; set; }
 
         public string UserType { get; set; }
+
+        public string Image { get; set; }
         public HttpPostedFileBase Image_new { get; set; }
 
     }

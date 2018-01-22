@@ -11,7 +11,7 @@ namespace TheBigDukan
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.Web;
     public partial class Product
     {
         public int product_ID { get; set; }
@@ -30,5 +30,7 @@ namespace TheBigDukan
         public string UpDate_By { get; set; }
         public Nullable<int> Discounted_Prize { get; set; }
         public string image { get; set; }
+       
+
     }
 }

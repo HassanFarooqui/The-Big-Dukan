@@ -25,7 +25,9 @@ namespace TheBigDukan.Models
         public string Product_Type { get; set; }
 
         public string Product_Details { get; set; }
+        public string image { get; set; }
+        public HttpPostedFileBase Image_new2 { get; set; }
 
-       
+
     }
 }

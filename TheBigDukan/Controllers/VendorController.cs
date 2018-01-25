@@ -19,6 +19,8 @@ namespace TheBigDukan.Controllers
             SignUpModel.sharedInstance = model;
             return View(model);
         }
+
+        #region Electronic     
         public ActionResult Electronic()
         {
             ActionResult myaction = RedirectToAction("ProductDetailActionIndex", "ProductDetail");
@@ -41,11 +43,9 @@ namespace TheBigDukan.Controllers
             }
             return myaction;
         }
+        #endregion
 
-
-
-
-
+        #region PhonesNTablets  
         public ActionResult PhonesNTablets()
         {
             ActionResult myaction = RedirectToAction("ProductDetailActionIndex", "ProductDetail");
@@ -68,8 +68,9 @@ namespace TheBigDukan.Controllers
             }
             return myaction;
         }
+        #endregion
 
-
+        #region BabyNToysNKidsion     
         public ActionResult BabyNToysNKids()
         {
             ActionResult myaction = RedirectToAction("ProductDetailActionIndex", "ProductDetail");
@@ -92,7 +93,9 @@ namespace TheBigDukan.Controllers
             }
             return myaction;
         }
+        #endregion
 
+        #region WomenNFashion     
         public ActionResult WomenNFashion()
         {
             ActionResult myaction = RedirectToAction("ProductDetailActionIndex", "ProductDetail");
@@ -115,6 +118,31 @@ namespace TheBigDukan.Controllers
             }
             return myaction;
         }
+        #endregion
 
+        #region GroceryShop     
+        public ActionResult GroceryShop()
+        {
+            ActionResult myaction = RedirectToAction("ProductDetailActionIndex", "ProductDetail");
+            string Item = "GroceryShop";
+
+            try
+            {
+                Main_Category maincat = db.Main_Category.Single(w => w.cat_Data == Item);
+                // var a = db.Main_Category.Where(w => w.Cat_Name.StartsWith(Elect)).ToList();
+
+                if (maincat != null)
+                {
+
+                    Session["CategoryOBj"] = maincat;
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+            return myaction;
+        }
+        #endregion
     }
 }

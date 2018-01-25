@@ -11,6 +11,8 @@ namespace TheBigDukan.Controllers
     {
         Entities1 db = new Entities1();
 
+        public string Elect { get; private set; }
+
         // GET: Vendor
         public ActionResult VenderActionIndex(SignUpModel model)
         {
@@ -39,5 +41,80 @@ namespace TheBigDukan.Controllers
             }
             return myaction;
         }
+
+
+
+
+
+        public ActionResult PhonesNTablets()
+        {
+            ActionResult myaction = RedirectToAction("ProductDetailActionIndex", "ProductDetail");
+            string Item = "PhonesNTablets";
+
+            try
+            {
+                Main_Category maincat = db.Main_Category.Single(w => w.cat_Data == Item);
+                // var a = db.Main_Category.Where(w => w.Cat_Name.StartsWith(Elect)).ToList();
+
+                if (maincat != null)
+                {
+
+                    Session["CategoryOBj"] = maincat;
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+            return myaction;
+        }
+
+
+        public ActionResult BabyNToysNKids()
+        {
+            ActionResult myaction = RedirectToAction("ProductDetailActionIndex", "ProductDetail");
+            string Item = "BabyNToysNKids";
+
+            try
+            {
+                Main_Category maincat = db.Main_Category.Single(w => w.cat_Data == Item);
+                // var a = db.Main_Category.Where(w => w.Cat_Name.StartsWith(Elect)).ToList();
+
+                if (maincat != null)
+                {
+
+                    Session["CategoryOBj"] = maincat;
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+            return myaction;
+        }
+
+        public ActionResult WomenNFashion()
+        {
+            ActionResult myaction = RedirectToAction("ProductDetailActionIndex", "ProductDetail");
+            string Item = "WomenNFashion";
+
+            try
+            {
+                Main_Category maincat = db.Main_Category.Single(w => w.cat_Data == Item);
+                // var a = db.Main_Category.Where(w => w.Cat_Name.StartsWith(Elect)).ToList();
+
+                if (maincat != null)
+                {
+
+                    Session["CategoryOBj"] = maincat;
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+            return myaction;
+        }
+
     }
 }

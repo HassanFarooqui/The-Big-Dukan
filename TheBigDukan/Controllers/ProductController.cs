@@ -20,11 +20,7 @@ namespace TheBigDukan.Controllers
         // GET: Product
         public ActionResult ProductAction()
         {
-           // Vendor_Data = SignUpModel.sharedInstance;
-
-           // Main_cat_Data = (Main_Category)Session["CategoryOBj"];
-           
-          
+        
             return View();
         }
 

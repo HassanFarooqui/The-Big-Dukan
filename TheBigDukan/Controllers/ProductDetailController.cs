@@ -15,9 +15,15 @@ namespace TheBigDukan.Controllers
         Entities1 db = new Entities1();
 
         #region Show Product Page       
-        public ActionResult ProductDetailActionIndex()
+        public ActionResult ProductDetailActionIndex(Main_Category model)
         {
-            return View(db.Products.ToList());
+           // Product p = db.Products.SingleOrDefault(g => g.category_ID == model.category_ID);
+            var query = from c in db.Products
+                        where c.category_ID == model.category_ID
+                        select c;
+           
+          //  List<Product> a = db.Products.ToList();
+            return View(query.ToList());
         }
         #endregion
 

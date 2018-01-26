@@ -35,7 +35,9 @@ namespace TheBigDukan.Controllers
                 {
                     
                     Session["CategoryOBj"] = maincat;
-               }
+                    myaction = RedirectToAction("ProductDetailActionIndex", "ProductDetail",maincat);
+
+                }
             }
             catch (Exception ex)
             {
@@ -60,6 +62,7 @@ namespace TheBigDukan.Controllers
                 {
 
                     Session["CategoryOBj"] = maincat;
+                    myaction = RedirectToAction("ProductDetailActionIndex", "ProductDetail", maincat);
                 }
             }
             catch (Exception ex)
@@ -85,6 +88,7 @@ namespace TheBigDukan.Controllers
                 {
 
                     Session["CategoryOBj"] = maincat;
+                    myaction = RedirectToAction("ProductDetailActionIndex", "ProductDetail", maincat);
                 }
             }
             catch (Exception ex)
@@ -110,6 +114,7 @@ namespace TheBigDukan.Controllers
                 {
 
                     Session["CategoryOBj"] = maincat;
+                    myaction = RedirectToAction("ProductDetailActionIndex", "ProductDetail", maincat);
                 }
             }
             catch (Exception ex)
@@ -135,6 +140,7 @@ namespace TheBigDukan.Controllers
                 {
 
                     Session["CategoryOBj"] = maincat;
+                    myaction = RedirectToAction("ProductDetailActionIndex", "ProductDetail", maincat);
                 }
             }
             catch (Exception ex)

@@ -2,9 +2,14 @@
 
 @{
     ViewBag.Title = "ProductDetailActionIndex";
+
+    Main_Category mainCat = (Main_Category)Session["CategoryOBj"];
+
+       
 }
 
-<h2>ProductList</h2>
+    <h2>@Html.DisplayFor(c => mainCat.cat_Data)</h2>
+
 
 <p>
     <input type="submit" value="Create" class="btn btn-default" onclick="location.href='@Url.Action("ProductAction", "Product")'" />

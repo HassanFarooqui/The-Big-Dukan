@@ -23,10 +23,47 @@
 
 <div>
     <hr />
+    <div class="row">
+        <div class="col-md-offset-1 col-xs-12 col-md-5" style="background:#000;">
+            <div>
+                @if (Model.image != null)
+                {
+                    <img src="@Url.Content(@Model.image)" alt="Alternate Text" style="width: 543px;" />
+                } else
+                {
+                    <img src="http://via.placeholder.com/543x543" alt="fake image" style="width: 543px;" />
+                }
+            </div>
+        </div>
+        <div class="col-xs-12 col-md-5" style="">
+            <div class="col-md-12">
+                <h1>
+                    @Html.DisplayFor(model => model.product_Name)
+                </h1>
+                <p>
+                    By @Html.DisplayFor(model => model.product_Maker)
+                </p>
+                <div class="col-md-12">
+                    <div class="col-md-4" style="font-size: 1.5em;">
+                        Price: 79999
+                    </div>
+                    <div class="col-md-4 pull-right">
+                        <button class="btn btn-default"> Buy Now</button>
+                    </div>
+                </div>
+                <div class="col-md-12 pull-left">
+                    <p>
+                        @Html.DisplayFor(model => model.product_Detail)
+                    </p>
+                </div>
+                </div>
+            </div>
+    </div>
+
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.product_ID)
-           
+
         </dt>
 
         <dd>
@@ -161,9 +198,6 @@
             @*@Html.DisplayFor(model => model.Discounted_Prize)*@
             @Html.TextBoxFor(model => model.Discounted_Prize, new { @class = "form-control" })
         </dd>
-        @if (Model.image != null)
-        {
-            <img src="@Url.Content(@Model.image)" alt="Alternate Text" />
-        }       
+        
     </dl>
 </div>

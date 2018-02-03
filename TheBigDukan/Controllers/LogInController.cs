@@ -74,45 +74,42 @@ namespace TheBigDukan.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult SignUpView(SignUpModel mymodelSignUp)
+        public ActionResult SignUpView(Registration mymodelSignUp)
 
         {
-            Registration regform = new Registration();
+           
             try
-            {  
+            {
 
-                regform.name = mymodelSignUp.Name;
-                regform.email = mymodelSignUp.Email;
-                regform.address = mymodelSignUp.Address;
-                regform.cellNo = mymodelSignUp.CellNo;
-                regform.password = mymodelSignUp.Password;
-                regform.userType = mymodelSignUp.UserType;
-                regform.time = Convert.ToString(DateTime.Now.Date);
-                if (mymodelSignUp.UserType == "Vendor")
-                {
-                    regform.isActive = false;
-                }
-                else
-                {
-                    regform.isActive = true;
-                }
+                //regform.name = mymodelSignUp.name;
+                //regform.email = mymodelSignUp.email;
+                //regform.address = mymodelSignUp.address;
+                //regform.cellNo = mymodelSignUp.cellNo
+                //regform.password = mymodelSignUp.password;
+                //regform.userType = mymodelSignUp.userType
+                //regform.time = Convert.ToString(DateTime.Now.Date);
+                //if (mymodelSignUp.userType == "Vendor")
+                //{
+                //    regform.isActive = false;
+                //}
+                //else
+                //{
+                //    regform.isActive = true;
+                //}
 
-                #region Save Image on Server
+                //#region Save Image on Server
 
 
-                //string FileName = Path.GetFileNameWithoutExtension(mymodelSignUp.Image_new.FileName);
-                //string Extension = Path.GetExtension(mymodelSignUp.Image_new.FileName);
-                //FileName = FileName + DateTime.Now.ToString("yymmssff") + Extension;
-                //regform.Image = "~/Pictures/" + FileName;
+                string FileName = Path.GetFileNameWithoutExtension(mymodelSignUp.Image_new.FileName);
+                string Extension = Path.GetExtension(mymodelSignUp.Image_new.FileName);
+                FileName = FileName + DateTime.Now.ToString("yymmssff") + Extension;
+                mymodelSignUp.Image = "~/Pictures/" + FileName;
 
-                //FileName = Path.Combine(Server.MapPath("~/Pictures/"), FileName);
-                 string FileName ="~/ Pictures / Fruits18015895.jpg";
-                regform.Image =  FileName;
-                //  mymodelSignUp.Image_new.SaveAs(FileName);
+                FileName = Path.Combine(Server.MapPath("~/Pictures/"), FileName);
+
                 mymodelSignUp.Image_new.SaveAs(FileName);
-                #endregion  
 
-                db.Registrations.Add(regform);
+                db.Registrations.Add(mymodelSignUp);
                 db.SaveChanges();
             }
             catch (Exception ex)

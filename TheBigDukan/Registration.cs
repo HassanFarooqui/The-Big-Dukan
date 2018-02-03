@@ -25,6 +25,6 @@ namespace TheBigDukan
         public int id { get; set; }
         public string time { get; set; }
         public string Image { get; set; }
-        public HttpPostedFileBase Image_new { get; internal set; }
+        public HttpPostedFileBase Image_new { get; set; }
     }
 }

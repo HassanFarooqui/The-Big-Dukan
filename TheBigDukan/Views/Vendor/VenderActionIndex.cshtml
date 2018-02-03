@@ -392,9 +392,28 @@ section{
             </div>
 
             <div class="col-sm-2 col-lg-3 col-xs-2 col-md-2 text-right">
-             <button class="btn btn-default">
-            @Html.DisplayFor(model => model.Name)
-              </button>  
+            
+                 @{
+                     if (Model.Name != null)
+                     {
+                        <button class="btn btn-default">
+                            @Html.DisplayFor(model => model.Name)
+                        </button>
+
+                        <button  class="btn btn-default">
+                            LogOut
+                        </button>
+                     }
+                     else
+                     {
+                        <button class="btn btn-default" onclick="location.href='@Url.Action("LogInAction", "LogIn")'">
+                          LogIn
+                        </button>
+
+                     }
+                }
+
+                      
 
              @*   Snow the pic on the view
                     <img src="@Url.Content(@Model.Image)" alt="Alternate Text" />

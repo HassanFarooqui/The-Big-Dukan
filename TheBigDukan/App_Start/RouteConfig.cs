@@ -16,7 +16,7 @@ namespace TheBigDukan
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "LogIn", action = "LogInAction", id = UrlParameter.Optional }
+                defaults: new { controller = "Vendor", action = "VenderActionIndex", id = UrlParameter.Optional }
             );
         }
     }

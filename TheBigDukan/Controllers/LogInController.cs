@@ -11,6 +11,9 @@ namespace TheBigDukan.Controllers
     public class LogInController : Controller
     {
         Entities1 db = new Entities1();
+
+        public string FileName { get; private set; }
+
         // GET: LogIn
         [HttpGet]
         public ActionResult LogInAction()
@@ -19,13 +22,13 @@ namespace TheBigDukan.Controllers
         }
 
         [HttpPost]
-        public ActionResult LogInAction(LogInModel myLoginModel)
+        public ActionResult LogInAction(Registration myLoginModel)
             
         {
             
             ActionResult myaction = RedirectToAction("VenderActionIndex", "Vendor");
-            string id = myLoginModel.Email;
-            string pass = myLoginModel.Password;
+            string id = myLoginModel.email;
+            string pass = myLoginModel.password;
             if (id != null && pass != null)
             {
                 try
@@ -37,7 +40,7 @@ namespace TheBigDukan.Controllers
                         if (regform == null)
                         {
                             
-                            myLoginModel.ErrorMsg = "not found";
+                           // myLoginModel.ErrorMsg = "not found";
                             myaction = View(myLoginModel);
                         }
                         else
@@ -53,7 +56,7 @@ namespace TheBigDukan.Controllers
                 }
                 catch (Exception )
                 {
-                    myLoginModel.ErrorMsg = "not found";
+                 //   myLoginModel.ErrorMsg = "not found";
                     myaction = View(myLoginModel);
                 }
             }
@@ -96,13 +99,16 @@ namespace TheBigDukan.Controllers
 
                 #region Save Image on Server
 
-             
-                string FileName = Path.GetFileNameWithoutExtension(mymodelSignUp.Image_new.FileName);
-                string Extension = Path.GetExtension(mymodelSignUp.Image_new.FileName);
-                FileName = FileName + DateTime.Now.ToString("yymmssff") + Extension;
-                regform.Image = "~/Pictures/" + FileName;
 
-                FileName = Path.Combine(Server.MapPath("~/Pictures/"), FileName);
+                //string FileName = Path.GetFileNameWithoutExtension(mymodelSignUp.Image_new.FileName);
+                //string Extension = Path.GetExtension(mymodelSignUp.Image_new.FileName);
+                //FileName = FileName + DateTime.Now.ToString("yymmssff") + Extension;
+                //regform.Image = "~/Pictures/" + FileName;
+
+                //FileName = Path.Combine(Server.MapPath("~/Pictures/"), FileName);
+                 string FileName ="~/ Pictures / Fruits18015895.jpg";
+                regform.Image =  FileName;
+                //  mymodelSignUp.Image_new.SaveAs(FileName);
                 mymodelSignUp.Image_new.SaveAs(FileName);
                 #endregion  
 
@@ -118,5 +124,6 @@ namespace TheBigDukan.Controllers
 
             return View();
         }
+       
     }
 }

@@ -179,6 +179,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\LogInController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
@@ -236,6 +237,7 @@
     <Content Include="Views\ProductDetail\EditProduct.cshtml" />
     <Content Include="Views\ProductDetail\DetailProduct.cshtml" />
     <Content Include="Views\ProductDetail\DeleteProduct.cshtml" />
+    <Content Include="Views\Client\ClientProducts.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

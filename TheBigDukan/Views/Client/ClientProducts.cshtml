@@ -1,4 +1,4 @@
-﻿
+﻿@model IEnumerable<TheBigDukan.Product>
 @{
     ViewBag.Title = "ClientProducts";
 }
@@ -29,19 +29,37 @@
 
 <h2>ClientProducts</h2>
 <div class="my-container">
+
     <div class="row">
-        <div class="col-md-4 col-lg-3 product" style="background: #000;">
-            <div class="product-image">
-                <img src="http://via.placeholder.com/300x200"/>
+        @foreach (var item in Model)
+        {
+
+
+            <div class="col-md-4 col-lg-3 product" style="background: #000;">
+                <div class="product-image">
+                    @if (item.image != null)
+                {
+                        <img src="@Url.Content(item.image)" width="300" height="200" />
+                    }
+                    else
+                    {
+                        <img src="http://via.placeholder.com/300x200" />
+                    }
+                </div>
+                <div class="product-name">
+                    @Html.DisplayFor(x => item.product_Name)
+                </div>
+                <div class="product-info">
+                    <span>
+                        @Html.DisplayFor(x => item.product_Detail)
+                    </span>
+                    <div class="price">
+                        @Html.DisplayFor(x => item.Discounted_Prize)
+                    </div>
+                </div>
             </div>
-            <div class="product-name">
-                Lenovo
-            </div>
-            <div class="product-info">
-                <span>ideapad 320 - Core i5-7200U</span>
-                <div class="price">Rs 52,099</div>
-            </div>
-        </div>
+
+        }
     </div>
 </div>
 

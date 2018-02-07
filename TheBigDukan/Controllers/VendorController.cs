@@ -35,7 +35,21 @@ namespace TheBigDukan.Controllers
                 {
                     
                     Session["CategoryOBj"] = maincat;
-                    myaction = RedirectToAction("ProductDetailActionIndex", "ProductDetail",maincat);
+                    if (SignUpModel.sharedInstance.UserType == null)
+                    {
+                        myaction = RedirectToAction("ClientProducts", "Client", maincat);
+                    }
+                    else {
+                        if (SignUpModel.sharedInstance.UserType == "Vendor")
+                        {
+                            myaction = RedirectToAction("ProductDetailActionIndex", "ProductDetail", maincat);
+                        }
+                        else
+                        {
+                            myaction = RedirectToAction("ClientProducts", "Client", maincat);
+                        }
+                    }
+
 
                 }
             }

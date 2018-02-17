@@ -45,7 +45,7 @@
                 </p>
                 <div class="col-md-12">
                     <div class="col-md-4" style="font-size: 1.5em;">
-                        Price: 79999
+                        Price: @Html.DisplayFor(model => model.Discounted_Prize)
                     </div>
                     <div class="col-md-4 pull-right">
                         <button class="btn btn-default"> Buy Now</button>
@@ -60,7 +60,7 @@
             </div>
     </div>
 
-    <dl class="dl-horizontal">
+    <!--<dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.product_ID)
 
@@ -200,4 +200,5 @@
         </dd>
         
     </dl>
+-->
 </div>

@@ -132,6 +132,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Images\AboutUs.png" />
     <Content Include="Images\Butler Logo.png" />
     <Content Include="Images\ElectronicItems %281%29.png" />
     <Content Include="Images\Food.png" />
@@ -140,6 +141,12 @@
     <Content Include="Images\Password.png" />
     <Content Include="Images\products\1.jpg" />
     <Content Include="Images\products\2.jpg" />
+    <Content Include="Images\Slider\slider1.jpg" />
+    <Content Include="Images\Slider\slider2.jpg" />
+    <Content Include="Images\Slider\Slider3.jpg" />
+    <Content Include="Images\Slider\slider4.jpg" />
+    <Content Include="Images\Slider\slider5.jpg" />
+    <Content Include="Images\women.png" />
     <Content Include="Images\ShoppingCart-50.png" />
     <Content Include="Images\slider1.jpg" />
     <Content Include="Images\slider2.jpg" />
@@ -179,7 +186,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutUsController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
+    <Compile Include="Controllers\ContactUsController.cs" />
     <Compile Include="Controllers\LogInController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="Controllers\ProductDetailController.cs" />
@@ -238,6 +247,8 @@
     <Content Include="Views\ProductDetail\DetailProduct.cshtml" />
     <Content Include="Views\ProductDetail\DeleteProduct.cshtml" />
     <Content Include="Views\Client\ClientProducts.cshtml" />
+    <Content Include="Views\AboutUs\AboutUsView.cshtml" />
+    <Content Include="Views\ContactUs\ContactUsView.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

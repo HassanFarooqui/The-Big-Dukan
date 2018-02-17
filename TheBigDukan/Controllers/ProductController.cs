@@ -28,7 +28,8 @@ namespace TheBigDukan.Controllers
         [HttpPost]
         public ActionResult ProductAction(ProductModel myProductModel)
         {
-            ActionResult myAction = RedirectToAction("ProductDetailActionIndex", "ProductDetail");
+            Main_cat_Data = (Main_Category)Session["CategoryOBj"];
+            ActionResult myAction = RedirectToAction("ProductDetailActionIndex", "ProductDetail",Main_cat_Data);
             Product ProdData = new Product();
             try
             {
@@ -37,7 +38,7 @@ namespace TheBigDukan.Controllers
                     return myAction;
                 }
                 Vendor_Data = SignUpModel.sharedInstance;
-                Main_cat_Data = (Main_Category)Session["CategoryOBj"];
+               
                 ProdData.category_ID = Main_cat_Data.category_ID;
                 ProdData.product_Maker = myProductModel.Product_Maker;
                 ProdData.product_Name = myProductModel.Product_Name;

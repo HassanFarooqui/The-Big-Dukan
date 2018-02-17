@@ -10,6 +10,7 @@
         margin: 0 auto;
         float: initial;
         margin-top: 1em;
+        font-size: 6.5em;
     }
     .remove-padding {
             padding: 0;
@@ -40,9 +41,7 @@
 
 </style>
 
- <div class="container " style="margin-top: -52px;">
-    <h2>LogInAction</h2>
-
+ <div class=" " style="margin-top: -39px;">
 @using (Html.BeginForm("LogInAction","Login",FormMethod.Post))
     {
         @Html.AntiForgeryToken()
@@ -74,15 +73,15 @@
 
     @*@Html.DisplayFor(model => model.ErrorMsg)*@
 </div>
-        <div class="col-md-6" style="background:#000000;height: 100vh;color: #fff;">
+        <div class="col-md-6" style="background:#61082b;height: 100vh;color: #fff;">
             <h1 class="login-head">
-                LOREM IPSUM DOLAR SIT
+                The BIG Dukaan
             </h1>
-            <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown
+            <p style="font-size: 2.2em;">
+                Dukaan is a modern shopping experience designed to reduce your busywork so you can focus on the things that matter.
             </p>
         </div>
-        <div class="col-md-6 remove-padding" style="background: #808080">
+        <div class="col-md-6 remove-padding">
             <div class="col-md-12 margin-1">
                 <div class="col-md-5 remove-padding">
                   <!--  <input id="txtUser" type="text" class="form-control" name="username" placeholder="Username">-->
@@ -99,8 +98,8 @@
                 <div class="col-md-2 ">
                     <button class="btn btn-default">Login</button>
                 </div>
-</div>         
-</div>
+            </div>         
+        </div>
 }
 
 

@@ -77,7 +77,8 @@ namespace TheBigDukan.Controllers
         public ActionResult SignUpView(Registration mymodelSignUp)
 
         {
-           
+            ActionResult myaction = RedirectToAction("VenderActionIndex", "Vendor");
+
             try
             {
 
@@ -98,7 +99,7 @@ namespace TheBigDukan.Controllers
                 //}
 
                 //#region Save Image on Server
-
+               
 
                 string FileName = Path.GetFileNameWithoutExtension(mymodelSignUp.Image_new.FileName);
                 string Extension = Path.GetExtension(mymodelSignUp.Image_new.FileName);
@@ -111,15 +112,16 @@ namespace TheBigDukan.Controllers
 
                 db.Registrations.Add(mymodelSignUp);
                 db.SaveChanges();
+                myaction = RedirectToAction("VenderActionIndex", "Vendor", mymodelSignUp);
             }
             catch (Exception ex)
             {
                 Response.Write(ex.Message);
                
             }
-          
 
-            return View();
+
+            return myaction;
         }
        
     }

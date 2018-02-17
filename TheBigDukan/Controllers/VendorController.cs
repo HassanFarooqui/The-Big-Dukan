@@ -218,5 +218,51 @@ namespace TheBigDukan.Controllers
             return myaction;
         }
         #endregion
+
+
+        #region Electronic     
+        public ActionResult Vegetable()
+        {
+            ActionResult myaction = RedirectToAction("ProductDetailActionIndex", "ProductDetail");
+            string Elect = "Vegetable";
+
+            try
+            {
+                Main_Category maincat = db.Main_Category.Single(w => w.cat_Data == Elect);
+                // var a = db.Main_Category.Where(w => w.Cat_Name.StartsWith(Elect)).ToList();
+
+                if (maincat != null)
+                {
+
+                    Session["CategoryOBj"] = maincat;
+                    if (SignUpModel.sharedInstance.UserType == null)
+                    {
+                        myaction = RedirectToAction("ClientProducts", "Client", maincat);
+                    }
+                    else {
+                        if (SignUpModel.sharedInstance.UserType == "Vendor")
+                        {
+                            myaction = RedirectToAction("ProductDetailActionIndex", "ProductDetail", maincat);
+                        }
+                        else
+                        {
+                            myaction = RedirectToAction("ClientProducts", "Client", maincat);
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                Response.Write(ex.Message);
+            }
+            return myaction;
+        }
+        #endregion
+        public ActionResult LogOut() {
+
+            ActionResult myaction = RedirectToAction("VenderActionIndex", "Vendor");
+            return myaction;
+        }
     }
 }

@@ -43,7 +43,7 @@
                 <div class="product-image">
                     @if (item.image != null)
                 {
-                        <img src="@Url.Content(item.image)" width="300" height="200"  onclick="location.href='@Url.Action("DetailProduct", "ProductDetail", new { id = item.product_ID })'"/>
+                        <img src="@Url.Content(item.image)" width="300" height="auto"  onclick="location.href='@Url.Action("DetailProduct", "ProductDetail", new { id = item.product_ID })'"/>
                     }
                     else
                     {
